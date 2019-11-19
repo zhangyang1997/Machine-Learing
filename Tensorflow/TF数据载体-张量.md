@@ -9,13 +9,13 @@
 
 #### 3.张量支持的数据类型
 
-![img](/pic/2.JPG)
+![img](pic/2.JPG)
 
-![img](/pic/3.JPG)
+![img](pic/3.JPG)
 
 #### 4.张量的属性
 
-![img](/pic/4.JPG)
+![img](pic/4.JPG)
 
 #### 5.创建张量
 
@@ -104,13 +104,13 @@ with tf.Session() as sess:
 
 #### 7.张量的公共成员方法
 
-![img](/pic/6.JPG)
+![img](pic/6.JPG)
 
 #### 8.张量的操作
 
-![img](/pic/8.JPG)
+![img](pic/8.JPG)
 
-![img](/pic/7.JPG)
+![img](pic/7.JPG)
 
 + **Code0：0阶常数张量(标量)的代数操作**
 
