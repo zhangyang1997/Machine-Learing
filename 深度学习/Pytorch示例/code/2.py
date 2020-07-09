@@ -51,6 +51,6 @@ for t in range(500):
     # loss关于W1的梯度
     grad_w1 = x.t().mm(grad_h)
 
-    # 更新权重
+    '''更新权重'''
     w1 -= learning_rate * grad_w1
     w2 -= learning_rate * grad_w2
