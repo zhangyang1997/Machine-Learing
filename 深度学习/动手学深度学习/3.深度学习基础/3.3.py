@@ -72,3 +72,8 @@ print()
 f = net[0]
 print(true_w, f.weight)
 print(true_b, f.bias)
+'''
+epoch 1, loss: 0.000343
+epoch 2, loss: 0.000157
+epoch 3, loss: 0.000122
+'''

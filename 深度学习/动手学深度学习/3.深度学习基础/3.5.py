@@ -16,10 +16,10 @@ def use_svg_display():
 '''1.获取数据集'''
 # 训练集
 mnist_train = torchvision.datasets.FashionMNIST(
-    root='~/Datasets/FashionMNIST', train=True, download=True, transform=transforms.ToTensor())
+    root='./Datasets/FashionMNIST/', train=True, download=True, transform=transforms.ToTensor())
 # 测试集
 mnist_test = torchvision.datasets.FashionMNIST(
-    root='~/Datasets/FashionMNIST', train=False, download=True, transform=transforms.ToTensor())
+    root='./Datasets/FashionMNIST/', train=False, download=True, transform=transforms.ToTensor())
 
 print(type(mnist_train))
 print(len(mnist_train), len(mnist_test))
@@ -169,6 +169,14 @@ titles = [true + '\n' + pred for true, pred in zip(true_labels, pred_labels)]
 # 前十张
 show_fashion_mnist(X[0:9], titles[0:9])
 
+
+'''
+epoch 1, loss 0.7844, train acc 0.750, test acc 0.787
+epoch 2, loss 0.5702, train acc 0.814, test acc 0.787
+epoch 3, loss 0.5260, train acc 0.825, test acc 0.821
+epoch 4, loss 0.5009, train acc 0.833, test acc 0.825
+epoch 5, loss 0.4866, train acc 0.836, test acc 0.826
+'''
 
 
 

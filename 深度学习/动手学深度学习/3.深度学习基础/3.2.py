@@ -112,3 +112,9 @@ for epoch in range(num_epochs):
     # 训练集整体的损失
     train_l = loss(net(features, w, b), labels)
     print('epoch %d, loss %f' % (epoch + 1, train_l.mean().item()))
+
+'''
+epoch 1, loss 0.035189
+epoch 2, loss 0.000130
+epoch 3, loss 0.000050
+'''
