@@ -9,6 +9,8 @@ import numpy as np
 import torch.nn as nn
 import collections
 import torch.nn.init as init
+import torchsummary
+
 
 # 1.获取和读取数据集
 mnist_train = torchvision.datasets.FashionMNIST(root='./Datasets/FashionMNIST/', train=True, download=True, transform=transforms.ToTensor())
@@ -32,6 +34,8 @@ net = nn.Sequential(
     nn.ReLU(),
     nn.Linear(num_hiddens, num_outputs),
 )
+print(torchsummary.summary(net, (1,784)))
+
 for params in net.parameters():
     init.normal_(params, mean=0, std=0.01)
 
@@ -67,6 +71,8 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,params=No
         print('轮数 %d, 训练集平均损失 %.4f, 训练集分类准确率 %.3f, 测试集分类准确率 %.3f'% (epoch + 1, train_l_sum / n, train_acc_sum / n, test_acc))
 
 train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
+
+
 
 '''
 轮数 1, 训练集平均损失 0.0032, 训练集分类准确率 0.696, 测试集分类准确率 0.716
