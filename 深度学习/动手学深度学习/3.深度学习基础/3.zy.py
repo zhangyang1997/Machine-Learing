@@ -18,6 +18,10 @@ mnist_test = torchvision.datasets.FashionMNIST(root='./Datasets/FashionMNIST/', 
 batch_size = 256
 train_iter = torch.utils.data.DataLoader(mnist_train, batch_size=batch_size, shuffle=True)
 test_iter = torch.utils.data.DataLoader(mnist_test, batch_size=batch_size, shuffle=False)
+# print(train_iter.sampler)
+# for i in train_iter.sampler:
+#     print(i[3])
+
 
 # 2.定义网络结构
 class FlattenLayer(nn.Module):
@@ -34,7 +38,7 @@ net = nn.Sequential(
     nn.ReLU(),
     nn.Linear(num_hiddens, num_outputs),
 )
-print(torchsummary.summary(net, (1,784)))
+# print(torchsummary.summary(net, (1,784)))
 
 for params in net.parameters():
     init.normal_(params, mean=0, std=0.01)
@@ -70,7 +74,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,params=No
         test_acc = evaluate_accuracy(test_iter, net)
         print('轮数 %d, 训练集平均损失 %.4f, 训练集分类准确率 %.3f, 测试集分类准确率 %.3f'% (epoch + 1, train_l_sum / n, train_acc_sum / n, test_acc))
 
-train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
+# train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
 
 
 
